@@ -427,14 +427,14 @@ export default function App() {
           position: "relative",
           maxWidth: 1200,
           margin: "0 auto",
-          padding: "32px 16px 48px",
+          padding: "24px 14px 48px",
         }}
       >
         <motion.section
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          style={{ marginBottom: 32 }}
+          style={{ marginBottom: 24 }}
         >
           <div
             style={{
@@ -445,14 +445,14 @@ export default function App() {
                 ? "0 20px 60px rgba(76,29,149,0.25)"
                 : "0 20px 60px rgba(251,113,133,0.18)",
               backdropFilter: "blur(18px)",
-              padding: 28,
+              padding: 20,
             }}
           >
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "minmax(0, 1.2fr) minmax(320px, 0.8fr)",
-                gap: 24,
+                gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+                gap: 20,
                 alignItems: "center",
               }}
             >
@@ -478,7 +478,7 @@ export default function App() {
                 <h1
                   style={{
                     margin: 0,
-                    fontSize: "clamp(42px, 7vw, 74px)",
+                    fontSize: "clamp(34px, 8vw, 74px)",
                     lineHeight: 1.04,
                     fontWeight: 700,
                     color: nightMode ? "#fff" : "#0f172a",
@@ -535,7 +535,7 @@ export default function App() {
                 style={{
                   display: "grid",
                   gap: 14,
-                  gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
                 }}
               >
                 <InfoCard
@@ -578,8 +578,9 @@ export default function App() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "420px minmax(0, 1fr)",
+            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
             gap: 24,
+            alignItems: "start",
           }}
         >
           <div style={{ display: "grid", gap: 24 }}>
@@ -691,8 +692,8 @@ export default function App() {
                     src={memoryPreview}
                     alt="Preview"
                     style={{
-                      width: 180,
-                      maxWidth: "100%",
+                      width: "100%",
+                      maxWidth: 220,
                       borderRadius: 16,
                       objectFit: "cover",
                       boxShadow: "0 12px 30px rgba(0,0,0,0.18)",
@@ -733,7 +734,7 @@ export default function App() {
                   ref={previewRef}
                   style={{
                     position: "relative",
-                    minHeight: 700,
+                    minHeight: "clamp(420px, 65vw, 700px)",
                     background: nightMode
                       ? "linear-gradient(135deg, #020617, #312e81, #0f172a)"
                       : "linear-gradient(135deg, #ffe4e6, #fce7f3, #ffffff)",
@@ -745,7 +746,7 @@ export default function App() {
                       alt="Main preview"
                       style={{
                         width: "100%",
-                        height: 700,
+                        height: "clamp(420px, 65vw, 700px)",
                         objectFit: "cover",
                         display: "block",
                       }}
@@ -753,13 +754,15 @@ export default function App() {
                   ) : (
                     <div
                       style={{
-                        height: 700,
+                        minHeight: "clamp(420px, 65vw, 700px)",
                         display: "flex",
                         flexDirection: "column",
                         alignItems: "center",
                         justifyContent: "center",
                         gap: 14,
                         color: nightMode ? "#94a3b8" : "#64748b",
+                        padding: 20,
+                        textAlign: "center",
                       }}
                     >
                       <div
@@ -789,9 +792,9 @@ export default function App() {
                     }}
                   />
 
-                  <div style={{ position: "absolute", insetInline: 0, top: 0, padding: 32 }}>
+                  <div style={{ position: "absolute", insetInline: 0, top: 0, padding: 20 }}>
                     {nightMode && (
-                      <div style={{ position: "absolute", left: 32, right: 32, top: 24, height: 28 }}>
+                      <div style={{ position: "absolute", left: 20, right: 20, top: 18, height: 28 }}>
                         <div
                           style={{
                             position: "absolute",
@@ -836,6 +839,7 @@ export default function App() {
                         border: "1px solid rgba(255,255,255,0.15)",
                         background: "rgba(255,255,255,0.1)",
                         backdropFilter: "blur(10px)",
+                        fontSize: 14,
                       }}
                     >
                       <span>❤</span>
@@ -843,7 +847,7 @@ export default function App() {
                     </div>
                   </div>
 
-                  <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, padding: 32 }}>
+                  <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, padding: 20 }}>
                     <motion.div
                       initial={{ opacity: 0, y: 14 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -851,7 +855,7 @@ export default function App() {
                       style={{
                         maxWidth: 720,
                         borderRadius: 32,
-                        padding: 28,
+                        padding: 22,
                         border: "1px solid rgba(255,255,255,0.15)",
                         background: "rgba(255,255,255,0.1)",
                         color: "#fff",
@@ -875,9 +879,10 @@ export default function App() {
                       <h2
                         style={{
                           margin: 0,
-                          fontSize: "clamp(34px, 5vw, 68px)",
+                          fontSize: "clamp(30px, 7vw, 68px)",
                           lineHeight: 1.05,
                           fontWeight: 700,
+                          wordBreak: "break-word",
                         }}
                       >
                         {user1Name} <span style={{ color: "#fda4af" }}>&</span> {user2Name}
@@ -888,7 +893,7 @@ export default function App() {
                           marginTop: 16,
                           marginBottom: 0,
                           maxWidth: 620,
-                          fontSize: 18,
+                          fontSize: "clamp(16px, 3vw, 18px)",
                           lineHeight: 1.7,
                           color: "rgba(255,255,255,0.92)",
                         }}
@@ -925,13 +930,14 @@ export default function App() {
                   alignItems: "center",
                   justifyContent: "space-between",
                   gap: 16,
+                  flexWrap: "wrap",
                 }}
               >
                 <div>
                   <h3
                     style={{
                       margin: 0,
-                      fontSize: 36,
+                      fontSize: "clamp(28px, 6vw, 36px)",
                       fontWeight: 700,
                       color: nightMode ? "#fff" : "#0f172a",
                     }}
@@ -1038,7 +1044,7 @@ export default function App() {
                       display: "flex",
                       flexWrap: "wrap",
                       justifyContent: "center",
-                      gap: 32,
+                      gap: 24,
                     }}
                   >
                     {sortedMemories.map((memory, index) => (
@@ -1066,7 +1072,7 @@ export default function App() {
                         style={{
                           transformOrigin: "top center",
                           position: "relative",
-                          width: 220,
+                          width: "min(220px, 90vw)",
                           paddingTop: 8,
                         }}
                       >
@@ -1142,7 +1148,8 @@ export default function App() {
                                   alt={memory.title || "Memory"}
                                   style={{
                                     width: "100%",
-                                    height: 210,
+                                    height: "min(210px, 60vw)",
+                                    minHeight: 180,
                                     objectFit: "cover",
                                     borderRadius: 2,
                                     display: "block",
@@ -1176,7 +1183,8 @@ export default function App() {
                             ) : (
                               <div
                                 style={{
-                                  height: 210,
+                                  height: "min(210px, 60vw)",
+                                  minHeight: 180,
                                   borderRadius: 2,
                                   background: "#e5e7eb",
                                   display: "grid",
@@ -1206,6 +1214,7 @@ export default function App() {
                                   fontSize: 15,
                                   fontWeight: 700,
                                   color: "#0f172a",
+                                  wordBreak: "break-word",
                                 }}
                               >
                                 {memory.title || "Untitled memory"}
@@ -1218,6 +1227,7 @@ export default function App() {
                                   color: "#475569",
                                   fontFamily:
                                     '"Brush Script MT", "Segoe Script", "Lucida Handwriting", cursive',
+                                  wordBreak: "break-word",
                                 }}
                               >
                                 {memory.note || "No note"}
@@ -1312,7 +1322,7 @@ export default function App() {
               <div
                 style={{
                   display: "grid",
-                  gridTemplateColumns: "minmax(0, 1.2fr) minmax(320px, 0.8fr)",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
                 }}
               >
                 <div style={{ minHeight: 320, background: "#020617" }}>
@@ -1323,7 +1333,8 @@ export default function App() {
                       style={{
                         width: "100%",
                         height: "100%",
-                        minHeight: 420,
+                        minHeight: 320,
+                        maxHeight: "70vh",
                         objectFit: "cover",
                         display: "block",
                       }}
@@ -1331,7 +1342,7 @@ export default function App() {
                   ) : (
                     <div
                       style={{
-                        minHeight: 420,
+                        minHeight: 320,
                         display: "grid",
                         placeItems: "center",
                         color: "#94a3b8",
@@ -1342,7 +1353,7 @@ export default function App() {
                   )}
                 </div>
 
-                <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", padding: 32 }}>
+                <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", padding: 24 }}>
                   <p
                     style={{
                       margin: 0,
@@ -1359,9 +1370,10 @@ export default function App() {
                     style={{
                       marginTop: 14,
                       marginBottom: 0,
-                      fontSize: 40,
+                      fontSize: "clamp(28px, 6vw, 40px)",
                       fontWeight: 700,
                       color: "#fff",
+                      wordBreak: "break-word",
                     }}
                   >
                     {selectedMemory.title || "Untitled memory"}
@@ -1388,11 +1400,12 @@ export default function App() {
                     style={{
                       marginTop: 24,
                       marginBottom: 0,
-                      fontSize: 24,
+                      fontSize: "clamp(20px, 4vw, 24px)",
                       lineHeight: 1.8,
                       color: "rgba(255,255,255,0.92)",
                       fontFamily:
                         '"Brush Script MT", "Segoe Script", "Lucida Handwriting", cursive',
+                      wordBreak: "break-word",
                     }}
                   >
                     {selectedMemory.note || "No note"}
@@ -1459,7 +1472,7 @@ export default function App() {
                 ×
               </button>
 
-              <div style={{ padding: 28 }}>
+              <div style={{ padding: 24 }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 12, color: "#fff", marginBottom: 18 }}>
                   <span style={{ color: "#fda4af", fontSize: 22 }}>♫</span>
                   <div>
@@ -1527,7 +1540,7 @@ function Panel({
         style={{
           marginTop: 0,
           marginBottom: 18,
-          fontSize: 28,
+          fontSize: "clamp(24px, 5vw, 28px)",
           fontWeight: 700,
           color: nightMode ? "#fff" : "#0f172a",
         }}
@@ -1667,7 +1680,7 @@ function InfoCard({
       }}
     >
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12 }}>
-        <div>
+        <div style={{ minWidth: 0 }}>
           <p
             style={{
               margin: 0,
@@ -1680,9 +1693,10 @@ function InfoCard({
           <p
             style={{
               margin: "10px 0 0",
-              fontSize: 24,
+              fontSize: "clamp(20px, 4vw, 24px)",
               fontWeight: 700,
               color: nightMode ? "#fff" : "#0f172a",
+              wordBreak: "break-word",
             }}
           >
             {value}
@@ -1759,6 +1773,7 @@ function toggleButtonStyle(nightMode: boolean): React.CSSProperties {
     background: nightMode ? "rgba(255,255,255,0.08)" : "rgba(15,23,42,0.06)",
     color: nightMode ? "#fde68a" : "#334155",
     boxShadow: "0 8px 18px rgba(0,0,0,0.08)",
+    flexShrink: 0,
   };
 }
 
@@ -1773,6 +1788,7 @@ function iconButtonStyle(nightMode: boolean): React.CSSProperties {
     background: nightMode ? "rgba(255,255,255,0.08)" : "rgba(15,23,42,0.06)",
     color: nightMode ? "#fda4af" : "#e11d48",
     boxShadow: "0 8px 18px rgba(0,0,0,0.08)",
+    flexShrink: 0,
   };
 }
 
